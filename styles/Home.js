@@ -14,7 +14,7 @@ export const Container = styled.div`
 `
 
 export const LandingTitle = styled.div`
-
+    color: white;
 `
 
 export const LandingSubtitle = styled.div`
