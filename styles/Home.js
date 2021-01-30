@@ -34,7 +34,7 @@ export const Container = styled.div`
             "text text" 35vh
             "links illustration" auto
             "links illustration" auto
-            / 30vw 70vw;
+            / 40vw 60vw;
     }
     @media (min-width: 1800px) {}
 `
@@ -188,9 +188,6 @@ export const IllustrationWrapper = styled.div`
     @media (min-width: 600px) {}
     @media (min-width: 900px) {
         width: 100%;
-    }
-    @media (min-width: 1200px) {
-
     }
     @media (min-width: 1800px) {}
 `
