@@ -14,7 +14,7 @@ export default function TopHeader() {
     }, [])
 
     const checkCurrentRouterPath = () => {
-        const isPathSignIn = router.pathname === '/signin'
+        const isPathSignIn = (router.pathname === '/signin')
 
         if (isPathSignIn)
             setIsSignIn(true)
@@ -38,7 +38,7 @@ export default function TopHeader() {
 
             {!isSignIn &&
                 <Link href="/signin">
-                    <LinkButton>Login</LinkButton>
+                    <LinkButton>make my own folio</LinkButton>
                 </Link>
             }
         </Container>

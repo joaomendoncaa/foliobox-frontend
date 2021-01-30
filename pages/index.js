@@ -4,7 +4,14 @@ import Link from 'next/link'
 
 import TopHeader from '../components/TopHeader'
 
-import { Container, LandingTitle, LandingSubtitle, LinkMakeMyFolio, BuiltWithWrapper } from '../styles/Home'
+import {
+  Container,
+  TextsWrapper,
+  LinksWrapper,
+  LinkMakeMyFolio,
+  BuiltWithWrapper,
+  IllustrationWrapper
+} from '../styles/Home'
 
 export default function Home() {
   return (
@@ -16,33 +23,42 @@ export default function Home() {
 
       <TopHeader />
 
-      <LandingTitle>Keep focused on what matters</LandingTitle>
-      <LandingSubtitle>
-        Build an awesome portfolio in minutes
-        and focuse on what really matters, your projects!
-      </LandingSubtitle>
+      <TextsWrapper>
+        <h1>Keep focused on what matters</h1>
+        <p>
+          Build an awesome portfolio in minutes
+          and focuse on what really matters, your projects!
+        </p>
+      </TextsWrapper>
 
-      <Link href="/signin">
-        <LinkMakeMyFolio>make my own folio</LinkMakeMyFolio>
-      </Link>
+      <LinksWrapper>
+        <Link href="/signin">
+            <LinkMakeMyFolio>
+              make my own folio
+              
+            </LinkMakeMyFolio>
+          </Link>
 
-      <BuiltWithWrapper>
-        <span>Built with</span>
-        <Image width="20" height="20" layout="responsive" alt="Heart Icon" src="/icon-heart.svg" />
-        <span>
-          span
-          <a href="">João Mendonça</a>
-        </span>
-      </BuiltWithWrapper>
+          <BuiltWithWrapper>
+            <span>Built with</span>
+            <Image width="20" height="20" layout="fixed" alt="Heart Icon" src="/icon-heart.svg" />
+            <span>
+              by
+              <a target="_blank" href="https://twitter.com/joaomendoncaaaa">João Mendonça</a>
+            </span>
+          </BuiltWithWrapper>
+      </LinksWrapper>
 
-      <Image
-        width="789"
-        height="669"
-        layout="responsive"
-        quality="90"
-        alt="Illustration of someone at a desk"
-        src="/landing-illustration.png"
-        priority="true" />
+      <IllustrationWrapper>
+        <Image
+          layout="fill"
+          objectFit="contain"
+          objectPosition="bottom"
+          quality="95"
+          alt="Illustration of someone at a desk"
+          src="/landing-illustration.png"
+          priority />
+      </IllustrationWrapper>
     </Container>
   )
 }

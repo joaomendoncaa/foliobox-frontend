@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     width: 100vw;
-    padding: 2rem 2rem;
+    padding: 2rem var(--horizontal-padding);
     
     background-color: var(--primary-darkblue);
     
@@ -10,8 +10,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    position: absolute;
-    
+    position: fixed;
 `
 
 export const LinkButton = styled.a`
