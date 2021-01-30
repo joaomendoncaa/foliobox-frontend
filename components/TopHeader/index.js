@@ -38,7 +38,7 @@ export default function TopHeader() {
 
             {!isSignIn &&
                 <Link href="/signin">
-                    <LinkButton>make my own folio</LinkButton>
+                    <LinkButton>sign in</LinkButton>
                 </Link>
             }
         </Container>

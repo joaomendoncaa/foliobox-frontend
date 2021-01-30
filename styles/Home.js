@@ -124,10 +124,11 @@ export const LinkMakeMyFolio = styled.a`
 
     margin-bottom: 4rem;
 
+    transition: .1s ease-out;
+
     cursor: pointer;
 
     &:hover {
-        transition: .15s ease-out;
         background: transparent;
     
         color: white;
