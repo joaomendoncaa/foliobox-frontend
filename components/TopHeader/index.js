@@ -32,7 +32,7 @@ export default function TopHeader() {
                         priority="true"
                         layout="fixed"
                         alt="Foliobox Logo"
-                        src="/foliobox.svg" />
+                        src="/foliobox-light.svg" />
                 </a>
             </Link>
 

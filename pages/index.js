@@ -41,7 +41,7 @@ export default function Home() {
 
           <BuiltWithWrapper>
             <span>Built with</span>
-            <Image width="20" height="20" layout="fixed" alt="Heart Icon" src="/icon-heart.svg" />
+            <Image width="20" height="20" layout="fixed" alt="Heart Icon" src="/icon-heart-white.svg" />
             <span>
               by
               <a target="_blank" href="https://twitter.com/joaomendoncaaaa">João Mendonça</a>

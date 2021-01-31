@@ -6,6 +6,11 @@ export const GlobalStyles = createGlobalStyle`
 
         --text-primary-dark: #fff;
         --text-secondary-dark: #ACACAC;
+        --text-primary-light: #15141f;
+        --text-secondary-light: #676767;
+
+        --separator-light: #D9D9D9;
+        --separator-dark: #15141F;
 
         --horizontal-padding: 2rem;
     }
