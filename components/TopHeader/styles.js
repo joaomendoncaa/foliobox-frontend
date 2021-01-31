@@ -16,4 +16,8 @@ export const Container = styled.div`
 export const LinkButton = styled.a`
     color: white;
     cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 `
