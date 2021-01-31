@@ -42,7 +42,7 @@ export default function SignIn() {
             </IconButton>
             <a className="create-github-account">create a github account</a>
 
-            <Footer />
+            <Footer isPositionAbsolute />
         </Container>
     )
 }

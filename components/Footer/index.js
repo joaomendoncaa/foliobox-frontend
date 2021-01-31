@@ -2,10 +2,12 @@ import Image from 'next/image'
 
 import { Container, BuiltWithWrapper } from './styles'
 
-export default function Footer() {
+export default function Footer({ isPositionAbsolute }) {
 
     return (
-        <Container>
+        <Container isPositionAbsolute={isPositionAbsolute}>
+            <hr className="footer-separator" />
+
             <span className="copyright-span">© 2021 foliohub</span>
             <BuiltWithWrapper>
                 <span>Built with</span>
@@ -15,8 +17,6 @@ export default function Footer() {
                     <a target="_blank" href="https://twitter.com/joaomendoncaaaa">João Mendonça</a>
                 </span>
             </BuiltWithWrapper>
-
-            <hr className="footer-separator" />
         </Container>
     )
 }

@@ -28,6 +28,23 @@ export const Container = styled.div`
         cursor: pointer;
         text-decoration: underline;
     }
+    
+    @media (min-width: 600px) {
+        p {
+            max-width: 500px;
+        }
+    }
+    @media (min-width: 900px) {
+        p {
+            max-width: 700px;
+        }
+    }
+    @media (min-width: 1200px) {
+        p {
+            max-width: 800px;
+        }
+    }
+    @media (min-width: 1800px) {}
 `
 
 export const IllustrationWrapper = styled.div`
