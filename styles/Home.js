@@ -161,13 +161,17 @@ export const BuiltWithWrapper = styled.div`
         a {
             font-weight: bold;
             margin-left: .5rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
     @media (min-width: 600px) {}
     @media (min-width: 900px) {
         span {
-        font-size: .8rem;
+        font-size: 1rem;
         margin: 0 .5rem 0 0;
 
         a {

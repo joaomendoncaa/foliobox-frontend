@@ -26,7 +26,10 @@ export const Container = styled.div`
     .create-github-account {
         margin-top: 1rem;
         cursor: pointer;
-        text-decoration: underline;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
     
     @media (min-width: 600px) {
@@ -54,6 +57,17 @@ export const IllustrationWrapper = styled.div`
     height: 35vh;
 
     position: relative;
+
+    @media (min-width: 600px) {}
+    @media (min-width: 900px) {
+        height: 40vh;
+    }
+    @media (min-width: 1200px) {
+        height: 42.5vh;
+    }
+    @media (min-width: 1800px) {
+        height: 47.5vh;
+    }
 `
 
 export const IconButton = styled.a`
