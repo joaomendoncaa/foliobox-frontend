@@ -21,3 +21,7 @@ export const LinkButton = styled.a`
         text-decoration: underline;
     }
 `
+
+export const Placeholder = styled.div`
+    height: ${props => props.height + 'px'};
+`

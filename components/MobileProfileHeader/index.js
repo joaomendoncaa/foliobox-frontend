@@ -1,19 +1,43 @@
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { StickyContainer, Sticky } from 'react-sticky'
 
-import { Container } from './styles'
+import ProfileNavigation from '../ProfileNavigation'
+import ProfileInfo from '../ProfileInfo'
+
+import { NavWrapper, Placeholder } from './styles'
 
 export default function MobileProfileHeader() {
+    const navigation = useRef()
+    const [fixedPosition, setFixedPosition] = useState(false)
+    const [userInfo, setUserInfo] = useState({
+        pictureUrl: '/profile-image.jpg',
+        username: 'João Mendonça',
+        userSlug: 'joaomendoncaa',
+        userDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, praesentium voluptas ipsa illum facilis at optio eveniet ab fugit aut beatae! Illum ipsam soluta neque velit autem asperiores optio perferendis?',
+        location: 'Portugal',
+        twitter: '@joaomendoncaaa',
+        company: 'Digital Extremes',
+        website: 'joaomendonca.dev'
+
+    })
+
+    useEffect(() => {
+        const initialTop = navigation.current.getBoundingClientRect().top
+        const handleScroll = () => {
+            setFixedPosition((window.scrollY + 86) > initialTop)
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => { window.removeEventListener('scroll', handleScroll) }
+    }, [])
+
     return (
-        <Container>
-            <StickyContainer>
-                <Sticky topOffset={10}>
-                    {({
-                        style,
-                        isSticky
-                    }) => (<h1 style={style}>MobileProfileHeader</h1>)}
-                </Sticky>
-            </StickyContainer>
-        </Container>
+        <>
+            <ProfileInfo userData={userInfo} />
+            <NavWrapper fixed={fixedPosition} ref={navigation}>
+                <ProfileNavigation />
+            </NavWrapper>
+            {fixedPosition && <Placeholder height={navigation.current.getBoundingClientRect().height} />}
+        </>
     )
 }

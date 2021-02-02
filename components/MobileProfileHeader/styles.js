@@ -1,7 +1,15 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
-    padding: 300px var(--horizontal-padding) 0 var(--horizontal-padding);
+export const NavWrapper = styled.div`
+    padding: 0 var(--horizontal-padding) 0 var(--horizontal-padding);
+    background: white;
 
-    background: red;
+    ${props => props.fixed && css`
+        position: fixed;
+        top: 86px;
+    `}
+`
+
+export const Placeholder = styled.div`
+    height: ${props => props.height + 'px'};
 `

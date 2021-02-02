@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
-import { Container, LinkButton } from './styles'
+import { Container, LinkButton, Placeholder } from './styles'
 
 export default function TopHeader() {
+    const topHeader = useRef()
     const router = useRouter()
     const [isSignIn, setIsSignIn] = useState(false)
 
@@ -23,24 +24,27 @@ export default function TopHeader() {
     }
 
     return (
-        <Container>
-            <Link href="/">
-                <a>
-                    <Image
-                        width="98"
-                        height="18"
-                        priority="true"
-                        layout="fixed"
-                        alt="Foliobox Logo"
-                        src="/foliobox-light.svg" />
-                </a>
-            </Link>
-
-            {!isSignIn &&
-                <Link href="/signin">
-                    <LinkButton>sign in</LinkButton>
+        <>
+            <Container ref={topHeader}>
+                <Link href="/">
+                    <a>
+                        <Image
+                            width="98"
+                            height="18"
+                            priority="true"
+                            layout="fixed"
+                            alt="Foliobox Logo"
+                            src="/foliobox-light.svg" />
+                    </a>
                 </Link>
-            }
-        </Container>
+
+                {!isSignIn &&
+                    <Link href="/signin">
+                        <LinkButton>sign in</LinkButton>
+                    </Link>
+                }
+            </Container>
+            <Placeholder height={topHeader.current?.getBoundingClientRect().height} />
+        </>
     )
 }
