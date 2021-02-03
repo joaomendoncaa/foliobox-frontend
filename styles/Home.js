@@ -40,7 +40,7 @@ export const Container = styled.div`
 `
 
 export const TextsWrapper = styled.div`
-    padding: 10vh var(--horizontal-padding) 0rem var(--horizontal-padding);
+    padding: 0 var(--horizontal-padding) 0 var(--horizontal-padding);
     grid-area: text;
 
     display: flex;

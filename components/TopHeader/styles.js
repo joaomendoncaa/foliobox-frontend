@@ -23,5 +23,7 @@ export const LinkButton = styled.a`
 `
 
 export const Placeholder = styled.div`
+    width: 100vw;
+    background: red;
     height: ${props => props.height + 'px'};
 `

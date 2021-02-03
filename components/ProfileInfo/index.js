@@ -23,10 +23,10 @@ export default function ProfileInfo({ picture, username, userSlug, userDescripti
             <UserDescription>
                 {userDescription}
             </UserDescription>
-            {location && <ProfileInfoItem icon={'/icon-location'} info={location} />}
-            {twitter && <ProfileInfoItem icon={'/icon-twitter'} info={twitter} />}
-            {company && <ProfileInfoItem icon={'/icon-company'} info={company} />}
-            {website && <ProfileInfoItem icon={'/icon-website'} info={website} />}
+            {location && <ProfileInfoItem icon='/icon-location.svg' info={location} />}
+            {twitter && <ProfileInfoItem icon='/icon-twitter.svg' info={twitter} />}
+            {company && <ProfileInfoItem icon='/icon-company.svg' info={company} />}
+            {website && <ProfileInfoItem icon='/icon-website.svg' info={website} />}
         </Container>
     )
 }

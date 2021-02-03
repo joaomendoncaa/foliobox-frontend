@@ -51,8 +51,6 @@ export const Container = styled.div`
 `
 
 export const IllustrationWrapper = styled.div`
-    margin-top: 10vh;
-
     width: 100vw;
     height: 35vh;
 
