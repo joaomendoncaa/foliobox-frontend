@@ -13,7 +13,7 @@ export const Container = styled.div`
     align-items: center;
 
     @media (min-width: 900px) {
-        padding: 0 var(--horizontal-padding);
+        padding: 0 0 0 var(--horizontal-padding);
         grid-template: 
             "userimage" auto
             "username" auto
@@ -22,7 +22,7 @@ export const Container = styled.div`
             / 1fr;
 
         position: absolute;
-        top: 8rem;
+        top: 6rem;
         left: 0;
         z-index: 1;
 
