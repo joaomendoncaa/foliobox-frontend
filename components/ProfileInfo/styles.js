@@ -11,6 +11,24 @@ export const Container = styled.div`
         / auto 1fr;
 
     align-items: center;
+
+    @media (min-width: 900px) {
+        padding: 0 var(--horizontal-padding);
+        grid-template: 
+            "userimage" auto
+            "username" auto
+            "userdesc" auto
+            "userlinks" auto
+            / 1fr;
+
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        z-index: 1;
+
+    }
+    @media (min-width: 1200px) {}
+    @media (min-width: 1800px) {}
 `
 
 export const ProfileImageWrapper = styled.div`
@@ -33,6 +51,16 @@ export const ProfileImageWrapper = styled.div`
         width: 85%;
         margin: 0 auto!important;
     }
+
+    @media (min-width: 900px) {
+        width: 280px;
+        height: 280px;
+
+        margin-bottom: 1rem;
+
+    }
+    @media (min-width: 1200px) {}
+    @media (min-width: 1800px) {}
 `
 
 export const UsernameWrapper = styled.div`
@@ -62,6 +90,16 @@ export const UsernameWrapper = styled.div`
             }
         } 
     }
+
+    @media (min-width: 900px) {
+        padding-left: 0;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+    @media (min-width: 1200px) {}
+    @media (min-width: 1800px) {}
 `
 
 export const UserDescription = styled.div`
@@ -70,6 +108,13 @@ export const UserDescription = styled.div`
     font-size: 1.2rem;
 
     margin: 1rem 0;
+
+    @media (min-width: 900px) {
+        font-size: 1rem;
+        max-width: 250px;
+    }
+    @media (min-width: 1200px) {}
+    @media (min-width: 1800px) {}
 `
 
 export const UserLinks = styled.div`

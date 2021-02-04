@@ -1,3 +1,11 @@
+import VerticalSpacer from "../VerticalSpacer";
+import { Container } from "./styles";
+
 export default function ProfileNavigation() {
-    return <h1>ProfileNavigation</h1>
+    return (
+        <Container>
+            <VerticalSpacer height={2} />
+            <h1>ProfileNavigation</h1>
+        </Container>
+    )
 }

@@ -22,34 +22,72 @@ export default function Profile() {
             <TopHeader />
             {isMobile ? <MobileProfileHeader /> : <ProfileHeader />}
             <Container>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
-                <h1>Profile Page</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque facere obcaecati tempore earum amet doloribus fugiat quam, voluptates minus nam dolores omnis quia,
+                    adipisci sapiente soluta iste, ut modi id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore facilis accusantium ipsam aspernatur maxime sunt porro,
+                    aperiam sint dolor natus repudiandae quo praesentium ipsa nemo illum, quidem minima harum.
+                </p>
             </Container>
             <Footer />
         </>

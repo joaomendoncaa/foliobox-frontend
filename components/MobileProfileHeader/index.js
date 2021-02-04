@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
 
 import ProfileNavigation from '../ProfileNavigation'
 import ProfileInfo from '../ProfileInfo'
+import PictureAndUsername from '../PictureAndUsername'
 
 import { NavWrapper, Placeholder } from './styles'
 
