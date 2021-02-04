@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - ${props => props.height + 'px'});
     
     background: var(--primary-darkblue);
+
+    padding: 0 var(--horizontal-padding);
 
     /* overflow-x: hidden; */
 
@@ -12,54 +14,52 @@ export const Container = styled.div`
     grid-template: 
         "text" auto
         "links" auto
-        "illustration" 40vh
-        / 100vw;
+        "illustration" 50%
+        / calc(100vw - var(--horizontal-padding));
 
     @media (min-width: 600px) {
         grid-template: 
             "text" auto
             "links" auto
-            "illustration" 35vh
-            / 100vw;
+            "illustration" 50%
+            / calc(100vw - var(--horizontal-padding));
     }
     @media (min-width: 900px) {
         grid-template: 
-            "text text" 45vh
-            "links illustration" auto
-            "links illustration" auto
-            / 30vw 60vw;
+            "text text" 1fr
+            "links illustration" 2fr
+            / calc(30vw - var(--horizontal-padding)) calc(70vw - var(--horizontal-padding));
     }
     @media (min-width: 1200px) {
         grid-template: 
-            "text text" 35vh
-            "links illustration" auto
-            "links illustration" auto
-            / 40vw 60vw;
+            "text text" 1fr
+            "links illustration" 2fr
+            / calc(40vw - var(--horizontal-padding)) calc(60vw - var(--horizontal-padding));
     }
     @media (min-width: 1800px) {}
 `
 
 export const TextsWrapper = styled.div`
-    padding: 0 var(--horizontal-padding) 0 var(--horizontal-padding);
     grid-area: text;
 
+    max-width: calc(100vw - (var(--horizontal-padding) * 2));
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
 
     h1 {
         color: var(--text-primary-dark);
         font-size: 2.2rem;
         max-width: 300px;
 
-        margin: 1.2rem 0 .5rem 0;
+        margin: 0 0 .5rem 0;
     }
 
     p {
         color: var(--text-secondary-dark);
         font-size: 1rem;
-
-        margin-bottom: 3rem;
     }
 
     @media (min-width: 600px) {
@@ -78,11 +78,9 @@ export const TextsWrapper = styled.div`
         }
         p {
             font-size: 1.5rem;
-            margin-bottom: 0;
         }
     }
     @media (min-width: 1200px) {
-        padding: 15vh var(--horizontal-padding) 0rem var(--horizontal-padding);
 
         h1 {
             font-size: 3rem;
@@ -98,7 +96,6 @@ export const TextsWrapper = styled.div`
 `
 
 export const LinksWrapper = styled.div`
-    padding: 0 var(--horizontal-padding) 10vh var(--horizontal-padding);
     grid-area: links;
 
     display: flex;
@@ -106,10 +103,10 @@ export const LinksWrapper = styled.div`
     align-items: flex-start;
     justify-content: space-between;
 
+    padding-bottom: 4rem;
+
     @media (min-width: 600px) {}
-    @media (min-width: 900px) {
-        padding: 0 0 10vh var(--horizontal-padding);
-    }
+    @media (min-width: 900px) {}
     @media (min-width: 1200px) {}
     @media (min-width: 1800px) {}
 `
@@ -121,8 +118,6 @@ export const LinkMakeMyFolio = styled.a`
 
     border-radius: 5px;
     padding: .5rem 2rem;
-
-    margin-bottom: 4rem;
 
     transition: .1s ease-out;
 
@@ -185,13 +180,13 @@ export const BuiltWithWrapper = styled.div`
 `
 
 export const IllustrationWrapper = styled.div`
-    width: 100vw;
+    width: calc(100vw - (var(--horizontal-padding) * 2));
     grid-area: illustration;
     position: relative;
 
     @media (min-width: 600px) {}
     @media (min-width: 900px) {
-        width: 100%;
+        width: calc(60vw - var(--horizontal-padding));
     }
     @media (min-width: 1800px) {}
 `

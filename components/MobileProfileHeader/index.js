@@ -10,7 +10,7 @@ export default function MobileProfileHeader() {
     const navigation = useRef()
     const [fixedPosition, setFixedPosition] = useState(false)
     const [userInfo, setUserInfo] = useState({
-        pictureUrl: '/profile-image.jpg',
+        pictureUrl: '/profile-image.png',
         username: 'João Mendonça',
         userSlug: 'joaomendoncaa',
         userDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, praesentium voluptas ipsa illum facilis at optio eveniet ab fugit aut beatae! Illum ipsam soluta neque velit autem asperiores optio perferendis?',

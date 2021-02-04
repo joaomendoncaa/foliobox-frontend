@@ -44,7 +44,7 @@ export default function TopHeader() {
                     </Link>
                 }
             </Container>
-            <Placeholder height={(topHeader.current) ? topHeader.current.getBoundingClientRect().height : '86px'} />
+            <Placeholder height={(topHeader.current) ? topHeader.current.getBoundingClientRect().height : '86'} />
         </>
     )
 }

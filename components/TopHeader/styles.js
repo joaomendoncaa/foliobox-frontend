@@ -11,6 +11,8 @@ export const Container = styled.div`
     align-items: center;
 
     position: fixed;
+
+    z-index: 2;
 `
 
 export const LinkButton = styled.a`

@@ -4,6 +4,8 @@ export const GlobalStyles = createGlobalStyle`
     :root {
         --primary-darkblue: #15141f;
 
+        --background-main: #fff;
+
         --text-primary-dark: #fff;
         --text-secondary-dark: #ACACAC;
         --text-primary-light: #15141f;
@@ -11,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
 
         --separator-light: #D9D9D9;
         --separator-dark: #15141F;
+
+        --border-main: #C4C4C4;
 
         --horizontal-padding: 2rem;
     }

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import TopHeader from '../components/TopHeader'
 import ProfileHeader from '../components/ProfileHeader'
 import MobileProfileHeader from '../components/MobileProfileHeader'
+import Footer from '../components/Footer'
 
 import {
     Container
@@ -13,7 +14,7 @@ export default function Profile() {
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' })
 
     return (
-        <div>
+        <>
             <Head>
                 <title>Foliobox | Profile</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -50,6 +51,7 @@ export default function Profile() {
                 <h1>Profile Page</h1>
                 <h1>Profile Page</h1>
             </Container>
-        </div >
+            <Footer />
+        </>
     )
 }
