@@ -24,7 +24,7 @@ export const IconWrapper = styled.div`
 
 
         * {
-            fill: black;
+            fill: var(--text-secondary-light);
         }
     }
 `
@@ -32,5 +32,7 @@ export const IconWrapper = styled.div`
 export const InfoSpan = styled.div`
     margin-left: .5rem;
 
-    font-weight: bold;
+    font-weight: thin;
+
+    color: var(--text-secondary-light);
 `

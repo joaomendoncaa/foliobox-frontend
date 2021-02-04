@@ -8,7 +8,7 @@ export const Container = styled.div`
         "userimage username" auto
         "userdesc userdesc" auto
         "userlinks userlinks" auto
-        / 1fr 4fr;
+        / auto 1fr;
 
     align-items: center;
 `
@@ -40,13 +40,34 @@ export const UsernameWrapper = styled.div`
 
     justify-content: center;
 
+    padding-left: 1rem;
+
     h1 {
         font-size: 1.5rem;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        color: var(--text-secondary-light);
+        font-weight: thin;
+
+        svg {
+            width: 17.5px;
+            height: 17.5px;
+            margin-right: 10px;
+
+            path {
+                fill: var(--text-secondary-light);
+            }
+        } 
     }
 `
 
 export const UserDescription = styled.div`
     grid-area: userdesc;
+
+    font-size: 1.2rem;
 
     margin: 1rem 0;
 `
