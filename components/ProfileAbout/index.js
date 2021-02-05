@@ -21,9 +21,12 @@ export default function ProfileAbout() {
                 <span id="username">joaomendoncaa / </span>
                 <span id="readme">README.md</span>
             </ReadmeTitle>
-            <ReactMarkdown className='react-markdown'>
-                {readmeData}
-            </ReactMarkdown>
+            {readmeData ? (
+                <ReactMarkdown className='react-markdown'>
+                    {readmeData}
+                </ReactMarkdown>
+            ) : <h1>Loading README.md...</h1>}
+
         </Container>
     )
 } 

@@ -8,11 +8,13 @@ export default function PictureAndUsername({ userslug, picture }) {
             <ProfileImageWrapper>
                 <Image
                     layout="fill"
+                    loading="eager"
                     objectFit="contain"
                     objectPosition="center"
                     quality="92"
                     alt="Profile Picture"
-                    src={picture} />
+                    src={picture}
+                    priority />
             </ProfileImageWrapper>
             <span>{userslug}</span>
         </Container>
