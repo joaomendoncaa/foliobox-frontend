@@ -5,7 +5,7 @@ import ProfileInfoUserLink from '../ProfileInfoUserLink'
 
 import { Container, ProfileImageWrapper, UsernameWrapper, UserDescription, UserLinks } from './styles'
 
-export default function ProfileInfo({ userData }) {
+export default function NewProject({ userData }) {
     return (
         <Container>
             <ProfileImageWrapper>
