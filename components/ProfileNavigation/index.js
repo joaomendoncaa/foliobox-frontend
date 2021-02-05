@@ -1,12 +1,14 @@
 import { useState } from 'react'
+
 import { Container, NavButton } from './styles'
 
-export default function ProfileNavigation() {
-    const [optionSelected, setOptionSelected] = useState('comments')
+export default function ProfileNavigation({ changeMainContent }) {
+    const [optionSelected, setOptionSelected] = useState('about')
 
     const handleClick = (event) => {
         let option = event.target.dataset.option
         setOptionSelected(option)
+        changeMainContent(option)
     }
 
     return (
@@ -39,6 +41,6 @@ export default function ProfileNavigation() {
                 </svg>
                 <span>What people think about me</span>
             </NavButton>
-        </Container >
+        </Container>
     )
 }

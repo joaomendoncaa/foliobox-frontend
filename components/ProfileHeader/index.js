@@ -7,7 +7,7 @@ import PictureAndUsername from '../PictureAndUsername'
 import { Container, NavWrapper, Placeholder } from './styles'
 import VerticalSpacer from '../VerticalSpacer'
 
-export default function ProfileHeader() {
+export default function ProfileHeader({ changeMainContent }) {
     const navigation = useRef()
     const [fixedPosition, setFixedPosition] = useState(false)
     const [userInfo, setUserInfo] = useState({
@@ -37,7 +37,7 @@ export default function ProfileHeader() {
             {!fixedPosition && <ProfileInfo userData={userInfo} />}
             <NavWrapper fixed={fixedPosition} ref={navigation}>
                 {fixedPosition && <PictureAndUsername userslug={userInfo.userSlug} picture={userInfo.pictureUrl} />}
-                <ProfileNavigation />
+                <ProfileNavigation changeMainContent={changeMainContent} />
             </NavWrapper>
             {fixedPosition && <Placeholder height={navigation.current.getBoundingClientRect().height} />}
         </Container>

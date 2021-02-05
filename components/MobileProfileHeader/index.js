@@ -2,11 +2,10 @@ import { useState, useEffect, useRef } from 'react'
 
 import ProfileNavigation from '../ProfileNavigation'
 import ProfileInfo from '../ProfileInfo'
-import PictureAndUsername from '../PictureAndUsername'
 
 import { NavWrapper, Placeholder } from './styles'
 
-export default function MobileProfileHeader() {
+export default function MobileProfileHeader({ changeMainContent }) {
     const navigation = useRef()
     const [fixedPosition, setFixedPosition] = useState(false)
     const [userInfo, setUserInfo] = useState({
@@ -35,7 +34,7 @@ export default function MobileProfileHeader() {
         <>
             <ProfileInfo userData={userInfo} />
             <NavWrapper fixed={fixedPosition} ref={navigation}>
-                <ProfileNavigation />
+                <ProfileNavigation changeMainContent={changeMainContent} />
             </NavWrapper>
             {fixedPosition && <Placeholder height={navigation.current.getBoundingClientRect().height} />}
         </>
