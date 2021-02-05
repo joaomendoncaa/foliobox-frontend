@@ -6,17 +6,18 @@ import ProfileInfoUserLink from '../ProfileInfoUserLink'
 import { Container, ProfileImageWrapper, UsernameWrapper, UserDescription, UserLinks } from './styles'
 
 export default function ProfileInfo({ userData }) {
-
     return (
         <Container>
             <ProfileImageWrapper>
                 <Image
                     layout="fill"
+                    loading="eager"
                     objectFit="contain"
                     objectPosition="center"
-                    quality="92"
+                    quality="95"
                     alt="Profile Picture"
-                    src={userData.pictureUrl} />
+                    src={userData.pictureUrl}
+                    priority />
             </ProfileImageWrapper>
             <UsernameWrapper>
                 <h1>{userData.username}</h1>

@@ -38,4 +38,8 @@ export const ProfileImageWrapper = styled.div`
 
     display: flex;
     justify-content: center;
+
+    div {
+        border-radius: 99vw;
+    }
 `

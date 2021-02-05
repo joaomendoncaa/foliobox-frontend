@@ -47,9 +47,13 @@ export const ProfileImageWrapper = styled.div`
     display: flex;
     justify-content: center;
 
+    overflow: hidden;
+
     div {
-        width: 85%;
+        width: 100%;
         margin: 0 auto!important;
+
+        overflow: hidden;
     }
 
     @media (min-width: 900px) {

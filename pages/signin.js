@@ -32,7 +32,7 @@ export default function SignIn() {
                     it’s free, full of cool features and makes everything easier!
             </p>
 
-                <Link href="/profile">
+                <Link href="/profile/joaomendoncaa">
                     <IconButton>
                         <Image
                             width="27"

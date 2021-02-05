@@ -5,19 +5,18 @@ import ProfileInfo from '../ProfileInfo'
 
 import { NavWrapper, Placeholder } from './styles'
 
-export default function MobileProfileHeader({ changeMainContent }) {
+export default function MobileProfileHeader({ githubUserData, changeMainContent }) {
     const navigation = useRef()
     const [fixedPosition, setFixedPosition] = useState(false)
     const [userInfo, setUserInfo] = useState({
-        pictureUrl: '/profile-image.png',
-        username: 'João Mendonça',
-        userSlug: 'joaomendoncaa',
-        userDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, praesentium voluptas ipsa illum facilis at optio eveniet ab fugit aut beatae! Illum ipsam soluta neque velit autem asperiores optio perferendis?',
-        location: 'Portugal',
-        twitter: '@joaomendoncaaa',
-        company: 'Digital Extremes',
-        website: 'joaomendonca.dev'
-
+        pictureUrl: githubUserData.avatar_url,
+        username: githubUserData.name,
+        userSlug: githubUserData.login,
+        userDescription: githubUserData.bio,
+        location: githubUserData.location,
+        twitter: githubUserData.twitter_username,
+        company: githubUserData.company,
+        website: githubUserData.blog
     })
 
     useEffect(() => {
