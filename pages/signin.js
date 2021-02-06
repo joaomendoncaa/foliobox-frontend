@@ -33,7 +33,7 @@ export default function SignIn() {
             </p>
 
                 <Link href="/profile/joaomendoncaa">
-                    <IconButton>
+                    <IconButton >
                         <Image
                             width="27"
                             height="25.29"

@@ -46,7 +46,7 @@ export default function Home() {
               <Image width="20" height="20" layout="fixed" alt="Heart Icon" src="/icon-heart-white.svg" />
               <span>
                 by
-                <a target="_blank" href="https://twitter.com/joaomendoncaaaa">João Mendonça</a>
+                <a target="_blank" href="">João Mendonça</a>
               </span>
             </BuiltWithWrapper>
         </LinksWrapper>

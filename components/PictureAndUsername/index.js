@@ -12,7 +12,6 @@ export default function PictureAndUsername({ userslug, picture }) {
                     objectFit="contain"
                     objectPosition="center"
                     quality="92"
-                    alt="Profile Picture"
                     src={picture}
                     priority />
             </ProfileImageWrapper>

@@ -15,7 +15,6 @@ export default function NewProject({ userData }) {
                     objectFit="contain"
                     objectPosition="center"
                     quality="95"
-                    alt="Profile Picture"
                     src={userData.pictureUrl}
                     priority />
             </ProfileImageWrapper>

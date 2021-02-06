@@ -3,13 +3,19 @@ import styled, { css } from 'styled-components'
 export const Container = styled.div`
     width: 100%;
 
-    padding-left: var(--horizontal-padding);
+    padding: 0;
 
     display: flex;
 
     h1 {
         color: red;
     }
+
+    @media (min-width: 900px) {
+        padding-left: var(--horizontal-padding);
+    }
+    @media (min-width: 1200px) {}
+    @media (min-width: 1800px) {}
 `
 
 export const NavButton = styled.button`
@@ -29,6 +35,8 @@ export const NavButton = styled.button`
     svg {
         pointer-events: none;
         margin-right: .75rem;
+
+        display: none;
 
         path {
             fill: var(--border-main);
@@ -121,4 +129,12 @@ export const NavButton = styled.button`
             background: var(--primary-darkblue);
         }
     }
+
+    @media (min-width: 900px) {
+        svg {
+            display: inherit;
+        }
+    }
+    @media (min-width: 1200px) {}
+    @media (min-width: 1800px) {}
 `
