@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { fetchReadme } from '@varandas/fetch-readme'
 import ReactMarkdown from 'react-markdown'
 
 import { Container, ReadmeTitle } from './styles'
+import ProfileStyleContext from '../../context/ProfileStyleContext'
 
 export default function ProfileAbout() {
+    const theme = useContext(ProfileStyleContext)
     const [readmeData, setReadmeData] = useState(null)
 
     useEffect(async () => {
@@ -16,7 +18,7 @@ export default function ProfileAbout() {
     }, [])
 
     return (
-        <Container>
+        <Container theme={theme}>
             <ReadmeTitle>
                 <span id="username">joaomendoncaa / </span>
                 <span id="readme">README.md</span>

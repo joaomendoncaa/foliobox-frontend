@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    overflow-x: hidden;
+    /* overflow-x: hidden;s */
 `
 
 export const Main = styled.div`
