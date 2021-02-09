@@ -18,8 +18,8 @@ export default function NewProject() {
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' })
     const [name, setName] = useState('')
     const [date, setDate] = useState('01/2021')
-    const [details, setDetails] = useState('Lorem ipsum la la la')
-    const [techUsed, setTechUsed] = useState(
+    const [details, setDetails] = useState('')
+    const [techList, setTechList] = useState(
         //     [
         //     'javascript',
         //     'react',
@@ -29,6 +29,8 @@ export default function NewProject() {
         //     'CSS'
         // ]
     )
+    const [repo, setRepo] = useState('')
+    const [link, setLink] = useState('')
     const [images, setImages] = useState([])
     const [previewImages, setPreviewImages] = useState([])
 
@@ -53,11 +55,13 @@ export default function NewProject() {
             {isMobile ? <MobileNewProjectHeader /> : <NewProjectHeader />}
             <Main>
                 <PreviewProjectCard
-                    nameState={name}
-                    dateState={date}
-                    detailsState={details}
-                    techUsedState={techUsed}
-                    previewImagesState={previewImages} />
+                    projectName={name}
+                    projectDate={date}
+                    projectDescription={details}
+                    projectTechList={techList}
+                    projectRepository={repo}
+                    projectLink={link}
+                    projectPreviewImages={previewImages} />
 
                 <CreateProjectForm onSubmit={handleSubmit}>
 

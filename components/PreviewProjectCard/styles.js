@@ -4,11 +4,11 @@ export const Container = styled.div`
     border: 1px solid var(--border-main);
     border-radius: 5px;
 
-    padding: .75rem;
+    overflow: hidden;
 `
 
 export const ProjectInfoWrapper = styled.div`
-
+    padding: .75rem;
 `
 
 export const TitleAndDate = styled.div`
@@ -19,11 +19,19 @@ export const TitleAndDate = styled.div`
     .title {
         display: flex;
         align-items: center;
+
+        svg {
+            margin-right: .5rem;
+        }
     }
 `
 
 export const Description = styled.div`
+    padding: 1.25rem 0;
 
+    div:not(:first-child) {
+        margin-top: .25rem;
+    }
 `
 
 export const TechnologiesWrapper = styled.div`
@@ -31,10 +39,11 @@ export const TechnologiesWrapper = styled.div`
     align-items: center;
     flex-wrap: wrap;
 
-    &:hover {
-        background: red;
-        margin-left: 1rem;
+    div:not(:first-child) {
+        margin-left: .75rem;
     }
+
+    margin-bottom: 1.25rem;
 `
 
 export const ProjectButton = styled.div`
@@ -44,8 +53,11 @@ export const ProjectButton = styled.div`
     svg {
         margin-right: .4rem;
     }
+
+    padding: .25rem 0;
 `
 
 export const ProjectImagesWrapper = styled.div`
-
+    width: 100%;
+    height: 250px;
 `
