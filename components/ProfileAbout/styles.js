@@ -6,8 +6,6 @@ export const Container = styled.div`
 
     padding: 0 2rem 3rem 2rem;
 
-    background: ${props => props.theme.backgroundMain};
-
     .react-markdown {
         padding: 1rem;
     }
