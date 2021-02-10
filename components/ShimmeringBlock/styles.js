@@ -4,7 +4,7 @@ export const Container = styled.div`
     background-image: linear-gradient(
         90deg,
         #FFF 0%,
-        #EFEFEF 50%,
+        #E5E5E5 50%,
         #FFF 100%
     );
     background-size: 400% 400%;

@@ -5,10 +5,17 @@ export const Container = styled.div`
     border-radius: 5px;
 
     overflow: hidden;
+
+    position: fixed;
+
+    max-width: 360px;
+    min-width: 360px;
+
+    background: var(--background-main);
 `
 
 export const ProjectInfoWrapper = styled.div`
-    padding: .75rem;
+    padding: 1rem;
 `
 
 export const TitleAndDate = styled.div`

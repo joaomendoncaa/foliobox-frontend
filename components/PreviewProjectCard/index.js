@@ -46,9 +46,10 @@ export default function PreviewProjectCard({ projectName, projectDate, projectDe
                     )}
                 </Description>
                 <TechnologiesWrapper>
-                    {projectTechList ? projectTechList.map(tech => tech.toString()) :
+                    {(projectTechList.length >= 1) ? projectTechList.map(tech => tech.toString()) :
                         Array.from(Array(5).keys()).map(n => (
                             <ShimmeringBlock
+                                key={n}
                                 width='45px'
                                 height='18px'
                                 borderRadius='5px' />
