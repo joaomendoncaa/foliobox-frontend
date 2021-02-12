@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+export const ContentWrapper = styled.div`
+
+`
 
 export const Container = styled.div`
     border: 1px solid var(--border-main);
@@ -12,6 +16,11 @@ export const Container = styled.div`
     min-width: 360px;
 
     background: var(--background-main);
+
+    ${props => props.fixed && css`
+        position: fixed;
+        top: 215px;
+    `}
 `
 
 export const ProjectInfoWrapper = styled.div`
@@ -26,6 +35,7 @@ export const TitleAndDate = styled.div`
     .title {
         display: flex;
         align-items: center;
+        font-weight: 600;
 
         svg {
             margin-right: .5rem;
@@ -68,4 +78,14 @@ export const ProjectButton = styled.div`
 export const ProjectImagesWrapper = styled.div`
     width: 100%;
     height: 250px;
+`
+
+export const Placeholder = styled.div`
+    ${props => props.height && css`
+        height: calc(${props.height + 'px'});
+    `};
+
+    ${props => props.width && css`
+        width: calc(${props.width + 'px'});
+    `};
 `

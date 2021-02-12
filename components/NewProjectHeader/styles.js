@@ -56,6 +56,4 @@ export const Placeholder = styled.div`
     ${props => props.height && css`
         height: calc(${props.height + 'px'});
     `};
-
-    background: blue;
 `
