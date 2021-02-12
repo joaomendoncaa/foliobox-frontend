@@ -1,25 +1,29 @@
 import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-    padding: 5rem var(--horizontal-padding) 1rem var(--horizontal-padding);
+    
+`
 
-    border-bottom: 1px solid var(--border-main);
-
-    display: grid;
-    grid-template:
-        "preview form" auto
-        / auto calc(60vw - (var(--horizontal-padding) * 2));
-
+export const Content = styled.div`
     ${props => props.fixed && css`
         position: fixed;
         top: 86px;
     `}
 
-    width: 100%;
+    padding: 1rem var(--horizontal-padding);
 
     background: var(--background-main);
+    border-bottom: 1px solid var(--border-main);
+    background: var(--background-main);
+
+    width: 100%;
 
     z-index: 500;
+
+    display: grid;
+    grid-template:
+        "preview form" auto
+        / auto calc(60vw - (var(--horizontal-padding) * 2));
 
     @media (min-width: 900px) {}
     @media (min-width: 1200px) {
