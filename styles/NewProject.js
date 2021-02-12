@@ -26,12 +26,3 @@ export const Main = styled.div`
     }
 `
 
-export const CreateProjectForm = styled.form`
-    grid-area: form;
-
-    .name-input {
-
-        &:focus {
-        }
-    }
-`

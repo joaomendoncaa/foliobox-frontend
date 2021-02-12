@@ -3,6 +3,8 @@ import { useMediaQuery } from 'react-responsive'
 import { FormEvent, useState, ChangeEvent } from 'react'
 import { Router, useRouter } from 'next/router'
 import Head from 'next/head'
+import { Form, Formik } from 'formik'
+import * as Yup from 'yup'
 
 //Components imports
 import TopHeader from '../components/TopHeader'
@@ -25,8 +27,7 @@ import NewProjectFormContext from '../context/NewProjectFormContext'
 //Styles imports
 import {
     Container,
-    Main,
-    CreateProjectForm
+    Main
 } from '../styles/NewProject'
 
 export default function NewProject() {
@@ -34,7 +35,8 @@ export default function NewProject() {
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' })
     const [formData, setFormData] = useState({
         name: '',
-        date: '',
+        month: '01',
+        year: '2000',
         details: '',
         techList: [],
         repository: '',
@@ -45,10 +47,27 @@ export default function NewProject() {
 
     const updateData = (event) => {
         const { name, value } = event.target
-        setFormData(prevData => ({
-            ...prevData,
-            [name]: (name === 'name') ? value.toUpperCase() : value
-        }))
+
+        switch (name) {
+            case 'name':
+                setFormData(prevData => ({
+                    ...prevData,
+                    [name]: value.toUpperCase().trim()
+                }))
+                break
+            case 'details':
+                setFormData(prevData => ({
+                    ...prevData,
+                    [name]: value.trim()
+                }))
+                break
+            default:
+                setFormData(prevData => ({
+                    ...prevData,
+                    [name]: value
+                }))
+                break
+        }
     }
 
     async function handleSubmit(event) {
@@ -80,22 +99,56 @@ export default function NewProject() {
                         projectLink={formData.demoLink}
                         projectPreviewImages={formData.previewImages} />
 
-                    <CreateProjectForm onSubmit={handleSubmit}>
+                    <Formik
+                        initialValues={{
+                            name: '',
+                            month: null,
+                            year: null,
+                            details: '',
+                            techList: [],
+                            repository: '',
+                            demoLink: '',
+                            images: [],
+                            previewImages: []
+                        }}
 
-                        <ProjectName />
-                        <ProjectDate />
-                        <ProjectName />
-                        <ProjectDate />
-                        <ProjectName />
-                        <ProjectDate />
-                        <ProjectName />
-                        <ProjectDate />
-                        <ProjectName />
-                        <ProjectDate />
-                        <ProjectName />
-                        <ProjectDate />
+                        validationSchema={Yup.object({
+                            name: Yup.string()
+                                .required('A project name is required'),
+                            date: Yup.string()
+                                .matches('/^\d{4}-\d{2}$/')
+                                .required('A project date is required'),
+                            details: Yup.string()
+                                .min(15, 'Must be at least 15 characters')
+                                .max(400, 'Must be 400 characters or less')
+                                .required('Project details are required'),
+                            techList: Yup.array()
+                                .required('You must display the tech you used on the project'),
+                            repository: Yup.string(),
+                            demoLink: Yup.string(),
+                            images: Yup.array()
+                                .required('Missing some images for the project')
+                        })}
 
-                    </CreateProjectForm>
+                        onSubmit={(values, { setSubmitting, resetForm }) => {
+                            setTimeout(() => {
+                                alert(JSON.stringify(values, null, 4))
+                                resetForm()
+                                setSubmitting(false)
+                            }, 3000)
+                        }}>
+                        {props => (
+                            <Form>
+                                <ProjectName />
+                                <ProjectDate />
+                                <ProjectDetails />
+
+                                <button type="submit">{props.isSubmitting ? 'Submitting...' : 'Submit'}</button>
+
+                                <pre>{JSON.stringify(formData, null, 4)}</pre>
+                            </Form>
+                        )}
+                    </Formik>
                 </NewProjectFormContext.Provider>
             </Main>
             <Footer />

@@ -20,3 +20,10 @@ export const Description = styled.span`
 
     color: var(--text-secondary-dark);
 `
+export const InputsWrapper = styled.div`
+    display: flex;
+
+    section {
+        width: 50%;
+    }
+`

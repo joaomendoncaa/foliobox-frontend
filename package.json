@@ -12,6 +12,7 @@
     "@varandas/fetch-readme": "^1.0.8",
     "axios": "^0.21.1",
     "cookie": "^0.4.1",
+    "formik": "^2.2.6",
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -19,6 +20,7 @@
     "react-responsive": "^8.2.0",
     "react-sticky": "^6.0.3",
     "styled-components": "^5.2.1",
-    "use-cookie-state": "^1.0.0"
+    "use-cookie-state": "^1.0.0",
+    "yup": "^0.32.8"
   }
 }

@@ -9,7 +9,7 @@ export const NavWrapper = styled.div`
     border-bottom: 1px solid var(--border-main);
     background: white;
 
-    width: 100vw;
+    width: 100%;
 
     display: flex;
     align-items: center;

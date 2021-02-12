@@ -6,7 +6,7 @@ export const Container = styled.div`
 
     overflow: hidden;
 
-    position: fixed;
+    max-height: 400px;
 
     max-width: 360px;
     min-width: 360px;
@@ -35,6 +35,7 @@ export const TitleAndDate = styled.div`
 
 export const Description = styled.div`
     padding: 1.25rem 0;
+    word-wrap: break-word;
 
     div:not(:first-child) {
         margin-top: .25rem;
