@@ -14,7 +14,7 @@ import {
     Placeholder
 } from './styles'
 
-export default function PreviewProjectCard({ projectName, projectDate, projectDescription, projectTechList, projectRepository, projectLink, projectPreviewImages }) {
+export default function PreviewProjectCard({ projectName, projectMonth, projectYear, projectDescription, projectTechList, projectRepository, projectLink, projectPreviewImages }) {
     const content = useRef()
     const [fixedPosition, setFixedPosition] = useState(false)
 
@@ -22,7 +22,6 @@ export default function PreviewProjectCard({ projectName, projectDate, projectDe
         const initialTop = content.current.getBoundingClientRect().top
         const handleScroll = () => {
             setFixedPosition((window.scrollY + 215) > initialTop)
-            console.log({ window: window.scrollY, initialTop })
         }
         window.addEventListener('scroll', handleScroll)
 
@@ -46,7 +45,7 @@ export default function PreviewProjectCard({ projectName, projectDate, projectDe
                             )}
                         </span>
                         <span className="date">
-                            {projectDate ? projectDate.toLocaleString().toString() : (
+                            {(projectMonth && projectYear) ? `${projectMonth}/${projectYear}` : (
                                 <ShimmeringBlock
                                     width='80px'
                                     height='18px'
@@ -80,7 +79,7 @@ export default function PreviewProjectCard({ projectName, projectDate, projectDe
                             <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.00089 6.44587e-07C3.58038 -0.00172072 0 3.44446 0 7.69796C0 11.0615 2.23975 13.9207 5.35895 14.9707C5.77902 15.0723 5.71467 14.7848 5.71467 14.5886V13.2545C3.28902 13.5282 3.1907 11.9824 3.02804 11.7242C2.69914 11.1837 1.92157 11.046 2.15395 10.7878C2.70629 10.5141 3.26936 10.8567 3.9218 11.7845C4.3937 12.4575 5.31427 12.3439 5.78081 12.232C5.88269 11.8275 6.10077 11.466 6.40107 11.1854C3.88783 10.7517 2.84035 9.27473 2.84035 7.51893C2.84035 6.66686 3.13172 5.88364 3.70372 5.25189C3.33907 4.21047 3.73768 3.3188 3.79131 3.18625C4.82985 3.09674 5.90951 3.90234 5.99352 3.96603C6.5834 3.81283 7.25729 3.73193 8.01162 3.73193C8.76952 3.73193 9.4452 3.81627 10.0404 3.9712C10.2424 3.82316 11.2434 3.13117 12.2087 3.21552C12.2605 3.34806 12.6502 4.21907 12.307 5.24673C12.8862 5.88019 13.1811 6.6703 13.1811 7.5241C13.1811 9.28334 12.1265 10.762 9.60608 11.1889C9.82196 11.3933 9.99337 11.6372 10.1103 11.9061C10.2272 12.1751 10.2873 12.4638 10.2871 12.7553V14.6919C10.3014 14.8468 10.2871 15 10.5552 15C13.7209 13.9723 16 11.0925 16 7.69968C16 3.44446 12.4178 6.44587e-07 8.00089 6.44587e-07Z" fill="#C4C4C4" />
                             </svg>
-                    code repository
+                            code repository
                         </ProjectButton>
                     )}
                     {projectLink && (
@@ -92,7 +91,7 @@ export default function PreviewProjectCard({ projectName, projectDate, projectDe
                                 <path d="M2.90906 9.45432C2.90906 9.26144 2.98568 9.07645 3.12207 8.94006C3.25846 8.80367 3.44345 8.72705 3.63633 8.72705H6.54542C6.73831 8.72705 6.92329 8.80367 7.05968 8.94006C7.19607 9.07645 7.27269 9.26144 7.27269 9.45432C7.27269 9.64721 7.19607 9.83219 7.05968 9.96858C6.92329 10.105 6.73831 10.1816 6.54542 10.1816H3.63633C3.44345 10.1816 3.25846 10.105 3.12207 9.96858C2.98568 9.83219 2.90906 9.64721 2.90906 9.45432Z" fill="#C4C4C4" />
                                 <path fillRule="evenodd" clipRule="evenodd" d="M2.18182 0C1.60316 0 1.04821 0.22987 0.63904 0.63904C0.229869 1.04821 0 1.60316 0 2.18182V10.9091C0 11.4877 0.229869 12.0427 0.63904 12.4519C1.04821 12.861 1.60316 13.0909 2.18182 13.0909H13.8182C14.3968 13.0909 14.9518 12.861 15.361 12.4519C15.7701 12.0427 16 11.4877 16 10.9091V2.18182C16 1.60316 15.7701 1.04821 15.361 0.63904C14.9518 0.22987 14.3968 0 13.8182 0H2.18182ZM13.8182 1.45455H2.18182C1.98893 1.45455 1.80395 1.53117 1.66756 1.66756C1.53117 1.80395 1.45455 1.98893 1.45455 2.18182V10.9091C1.45455 11.102 1.53117 11.287 1.66756 11.4234C1.80395 11.5597 1.98893 11.6364 2.18182 11.6364H13.8182C14.0111 11.6364 14.1961 11.5597 14.3324 11.4234C14.4688 11.287 14.5455 11.102 14.5455 10.9091V2.18182C14.5455 1.98893 14.4688 1.80395 14.3324 1.66756C14.1961 1.53117 14.0111 1.45455 13.8182 1.45455Z" fill="#C4C4C4" />
                             </svg>
-                    live demo
+                            live demo
                         </ProjectButton>
                     )}
                 </ProjectInfoWrapper>

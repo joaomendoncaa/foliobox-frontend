@@ -20,12 +20,13 @@ export default function ProjectName({ ...props }) {
     return (
         <Container>
             <Title>Project Name</Title>
-            <Description>Give an original name to your project</Description>
+            <Description>Write an original name to your project</Description>
             <TextField
                 variant='outlined'
                 label='project name here...'
                 type="text"
                 className="name-input"
+                inputProps={{ maxLength: 15 }}
                 name="name"
                 {...field}
                 {...props}

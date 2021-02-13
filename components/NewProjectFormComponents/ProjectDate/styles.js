@@ -22,8 +22,5 @@ export const Description = styled.span`
 `
 export const InputsWrapper = styled.div`
     display: flex;
-
-    section {
-        width: 50%;
-    }
+    justify-content: space-between;
 `

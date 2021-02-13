@@ -46,6 +46,7 @@ export const TitleAndDate = styled.div`
 export const Description = styled.div`
     padding: 1.25rem 0;
     word-wrap: break-word;
+    color: var(--text-secondary-dark);
 
     div:not(:first-child) {
         margin-top: .25rem;

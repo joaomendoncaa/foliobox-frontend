@@ -1,6 +1,8 @@
 //Package imports
 import { useContext, useState } from 'react'
-import { Select, MenuItem } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
+import { Select, MenuItem, FormControl, InputLabel } from '@material-ui/core'
+import { useField } from 'formik'
 
 //Context imports
 import NewProjectFormContext from '../../../context/NewProjectFormContext'
@@ -13,21 +15,36 @@ import {
     InputsWrapper
 } from './styles'
 
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+        width: '45%',
+        minWidth: 120,
+    }
+}))
+
 export default function ProjectDate() {
+    const classes = useStyles()
     const { formData, updateData } = useContext(NewProjectFormContext)
+    const [monthField, monthMeta] = useField('month')
+    const [yearField, yearMeta] = useField('year')
 
     return (
         <Container>
             <Title>Project Date</Title>
-            <Description>Give us an aproximate date of when the project was done</Description>
+            <Description>Select an aproximate date of when the project was done</Description>
             <InputsWrapper>
-                <section>
+                <FormControl variant="outlined" className={classes.formControl}>
+                    <InputLabel id="select-month-label">Month</InputLabel>
                     <Select
-                        variant="outlined"
                         size="small"
                         value={formData.month}
                         onChange={updateData}
-                        name="month">
+                        name="month"
+                        labelId="select-month-label"
+                        label="Month">
+                        <MenuItem value=''>
+                            <em>None</em>
+                        </MenuItem>
                         <MenuItem value='01'>January</MenuItem>
                         <MenuItem value='02'>February</MenuItem>
                         <MenuItem value='03'>March</MenuItem>
@@ -41,14 +58,20 @@ export default function ProjectDate() {
                         <MenuItem value='11'>November</MenuItem>
                         <MenuItem value='12'>December</MenuItem>
                     </Select>
-                </section>
-                <section>
+                </FormControl>
+                <FormControl variant="outlined" className={classes.formControl}>
+                    <InputLabel id="select-year-label">Year</InputLabel>
                     <Select
                         variant="outlined"
                         size="small"
                         onChange={updateData}
                         name="year"
-                        value={formData.year}>
+                        value={formData.year}
+                        labelId="select-year-label"
+                        label="Year">
+                        <MenuItem value=''>
+                            <em>None</em>
+                        </MenuItem>
                         <MenuItem value='1990'>1990</MenuItem>
                         <MenuItem value='1991'>1991</MenuItem>
                         <MenuItem value='1992'>1992</MenuItem>
@@ -82,7 +105,7 @@ export default function ProjectDate() {
                         <MenuItem value='2020'>2020</MenuItem>
                         <MenuItem value='2021'>2021</MenuItem>
                     </Select>
-                </section>
+                </FormControl>
             </InputsWrapper>
         </Container>
     )

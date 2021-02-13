@@ -2,6 +2,8 @@ import Image from 'next/image'
 
 import { Container, FlexContainer, BuiltWithWrapper } from './styles'
 
+// TODO: make the component be self suficient on being absolute or not without receiving props
+
 export default function Footer({ isPositionAbsolute }) {
 
     return (

@@ -16,8 +16,8 @@ import PreviewProjectCard from '../components/PreviewProjectCard'
 import ProjectName from '../components/NewProjectFormComponents/ProjectName'
 import ProjectDate from '../components/NewProjectFormComponents/ProjectDate'
 import ProjectDetails from '../components/NewProjectFormComponents/ProjectDetails'
-import ProjectMedia from '../components/NewProjectFormComponents/ProjectMedia'
 import ProjectTechnologies from '../components/NewProjectFormComponents/ProjectTechnologies'
+import ProjectMedia from '../components/NewProjectFormComponents/ProjectMedia'
 import ProjectRepository from '../components/NewProjectFormComponents/ProjectRepository'
 import ProjectDemoLink from '../components/NewProjectFormComponents/ProjectDemoLink'
 
@@ -35,8 +35,8 @@ export default function NewProject() {
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' })
     const [formData, setFormData] = useState({
         name: '',
-        month: '01',
-        year: '2000',
+        month: '',
+        year: '',
         details: '',
         techList: [],
         repository: '',
@@ -58,7 +58,7 @@ export default function NewProject() {
             case 'details':
                 setFormData(prevData => ({
                     ...prevData,
-                    [name]: value.trim()
+                    [name]: value
                 }))
                 break
             default:
@@ -92,7 +92,8 @@ export default function NewProject() {
                 <NewProjectFormContext.Provider value={{ formData, updateData }}>
                     <PreviewProjectCard
                         projectName={formData.name}
-                        projectDate={formData.date}
+                        projectMonth={formData.month}
+                        projectYear={formData.year}
                         projectDescription={formData.details}
                         projectTechList={formData.techList}
                         projectRepository={formData.repository}
@@ -102,8 +103,8 @@ export default function NewProject() {
                     <Formik
                         initialValues={{
                             name: '',
-                            month: null,
-                            year: null,
+                            month: '',
+                            year: '',
                             details: '',
                             techList: [],
                             repository: '',
@@ -114,10 +115,13 @@ export default function NewProject() {
 
                         validationSchema={Yup.object({
                             name: Yup.string()
+                                .min(3, 'Must be at least 3 characters')
+                                .max(15, 'Must be 15 characters or less')
                                 .required('A project name is required'),
-                            date: Yup.string()
-                                .matches('/^\d{4}-\d{2}$/')
-                                .required('A project date is required'),
+                            month: Yup.string()
+                                .required('Specify the month of when the project was done'),
+                            year: Yup.string()
+                                .required('Specify the year of when the project was done'),
                             details: Yup.string()
                                 .min(15, 'Must be at least 15 characters')
                                 .max(400, 'Must be 400 characters or less')
@@ -142,6 +146,7 @@ export default function NewProject() {
                                 <ProjectName />
                                 <ProjectDate />
                                 <ProjectDetails />
+                                <ProjectTechnologies />
 
                                 <button type="submit">{props.isSubmitting ? 'Submitting...' : 'Submit'}</button>
 
