@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 import { FormEvent, useState, ChangeEvent } from 'react'
 import { Router, useRouter } from 'next/router'
 import Head from 'next/head'
-import { Form, Formik } from 'formik'
+import { Form, Formik, Field } from 'formik'
 import * as Yup from 'yup'
 
 //Components imports
@@ -128,7 +128,7 @@ export default function NewProject() {
                                 .required('Project details are required'),
                             techList: Yup.array()
                                 .required('You must display the tech you used on the project'),
-                            repository: Yup.string(),
+                            repository: Yup.string().url(),
                             demoLink: Yup.string(),
                             images: Yup.array()
                                 .required('Missing some images for the project')
@@ -141,16 +141,16 @@ export default function NewProject() {
                                 setSubmitting(false)
                             }, 3000)
                         }}>
-                        {props => (
+                        {({ values, isSubmitting, setFieldValue }) => (
                             <Form>
-                                <ProjectName />
-                                <ProjectDate />
-                                <ProjectDetails />
+                                <Field setFieldValue={setFieldValue} as={ProjectName} />
+                                <Field setFieldValue={setFieldValue} as={ProjectDate} />
+                                <Field setFieldValue={setFieldValue} as={ProjectDetails} />
                                 <ProjectTechnologies />
 
-                                <button type="submit">{props.isSubmitting ? 'Submitting...' : 'Submit'}</button>
+                                <button type="submit">{isSubmitting ? 'Submitting...' : 'Submit'}</button>
 
-                                <pre>{JSON.stringify(formData, null, 4)}</pre>
+                                <pre>{JSON.stringify(values, null, 4)}</pre>
                             </Form>
                         )}
                     </Formik>

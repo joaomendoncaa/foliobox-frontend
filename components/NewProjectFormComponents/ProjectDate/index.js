@@ -22,11 +22,14 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default function ProjectDate() {
+export default function ProjectDate(props) {
     const classes = useStyles()
-    const { formData, updateData } = useContext(NewProjectFormContext)
+
+    const { updateData } = useContext(NewProjectFormContext)
     const [monthField, monthMeta] = useField('month')
     const [yearField, yearMeta] = useField('year')
+
+    const { error, helperText, form, setFieldValue, ...rest } = props
 
     return (
         <Container>
@@ -36,12 +39,21 @@ export default function ProjectDate() {
                 <FormControl variant="outlined" className={classes.formControl}>
                     <InputLabel id="select-month-label">Month</InputLabel>
                     <Select
+                        {...rest}
                         size="small"
-                        value={formData.month}
-                        onChange={updateData}
                         name="month"
                         labelId="select-month-label"
-                        label="Month">
+                        label="Month"
+                        inputProps={{
+                            name: monthField.name,
+                            value: monthField.value
+                        }}
+                        error={(monthMeta.touched && monthMeta.error) ? true : false}
+                        helperText={(monthMeta.touched && monthMeta.error) ? monthMeta.error : null}
+                        onChange={event => {
+                            setFieldValue(monthField.name, event.target.value.toUpperCase())
+                            updateData(event)
+                        }}>
                         <MenuItem value=''>
                             <em>None</em>
                         </MenuItem>
@@ -62,13 +74,22 @@ export default function ProjectDate() {
                 <FormControl variant="outlined" className={classes.formControl}>
                     <InputLabel id="select-year-label">Year</InputLabel>
                     <Select
+                        {...rest}
                         variant="outlined"
                         size="small"
-                        onChange={updateData}
                         name="year"
-                        value={formData.year}
                         labelId="select-year-label"
-                        label="Year">
+                        label="Year"
+                        inputProps={{
+                            name: yearField.name,
+                            value: yearField.value
+                        }}
+                        error={(yearMeta.touched && yearMeta.error) ? true : false}
+                        helperText={(yearMeta.touched && yearMeta.error) ? yearMeta.error : null}
+                        onChange={event => {
+                            setFieldValue(yearField.name, event.target.value.toUpperCase())
+                            updateData(event)
+                        }}>
                         <MenuItem value=''>
                             <em>None</em>
                         </MenuItem>
