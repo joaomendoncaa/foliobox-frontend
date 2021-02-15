@@ -26,7 +26,8 @@ export default function ProjectName(props) {
             <TextField
                 {...rest}
                 variant='outlined'
-                label='project name here...'
+                label="Name"
+                placeholder='MY-PROJECT'
                 type="text"
                 className="name-input"
                 inputProps={{ maxLength: 15, name: field.name, value: field.value }}

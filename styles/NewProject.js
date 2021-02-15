@@ -4,7 +4,7 @@ export const Container = styled.div`
 `
 
 export const Main = styled.div`
-    padding: 2rem var(--horizontal-padding) 0 var(--horizontal-padding);
+    padding: 4rem var(--horizontal-padding) 0 var(--horizontal-padding);
 
     display: grid;
     grid-template:

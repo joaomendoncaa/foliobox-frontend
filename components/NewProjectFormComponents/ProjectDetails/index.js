@@ -31,7 +31,8 @@ export default function ProjectDetails(props) {
                 variant='outlined'
                 multiline
                 rows={6}
-                placeholder='project details here...'
+                label="Details"
+                placeholder='This project is about...'
                 inputProps={{ maxLength: 200, name: field.name, value: field.value }}
                 error={(meta.touched && meta.error) ? true : false}
                 helperText={(meta.touched && meta.error) ? meta.error : null}

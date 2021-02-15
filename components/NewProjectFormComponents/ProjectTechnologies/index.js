@@ -34,6 +34,7 @@ export default function ProjectName({ ...props }) {
                 helperText={meta.touched && meta.error ? meta.error : null}
                 value={formData.name.toString().toUpperCase()}
                 onChange={updateData} />
+
         </Container>
     )
 }
