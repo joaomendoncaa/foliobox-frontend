@@ -73,7 +73,7 @@ export const InputWrapper = styled.div`
     }
 
     .input-label {
-        color: var(--primary-darkblue)!important;
+        /* color: var(--primary-darkblue)!important; */
     }
 
     .textfield-shortcut-reference {

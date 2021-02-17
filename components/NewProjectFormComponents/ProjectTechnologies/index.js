@@ -24,34 +24,20 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default function ProjectName(props) {
+export default function ProjectTechnologies(props) {
     const classes = useStyles()
-    const input = useRef()
     const { push, remove } = props.fieldArrayProps
 
     const { formData, updateData } = useContext(NewProjectFormContext)
     const [techListField, meta] = useField('techList')
     const [newTech, setNewTech] = useState('')
-    const [isInputOnFocus, setisInputOnFocus] = useState(false)
-
-    useEffect(() => {
-        window.add
-    })
 
     const addTech = () => {
-        push(newTech)
+        //filters techInput commas
+        const techWithFilteredCommas = newTech.split(",").join("")
+        console.log('techWithFilteredCommas', techWithFilteredCommas)
+        push(techWithFilteredCommas)
         setNewTech('')
-    }
-
-    const addTechWithCommaShortcut = (event) => {
-        const { keyCode } = event
-
-        if (keyCode === 188) {
-            const inputValue = event.target.value.split(",")[0]
-
-            setNewTech(inputValue)
-            addTech()
-        }
     }
 
     return (
@@ -77,19 +63,31 @@ export default function ProjectName(props) {
                             variant='outlined'
                             label='Technology'
                             placeholder='react, javascript, elixir, php'
-                            type="text"
+                            type='text'
                             className={classes.input}
+                            onKeyPress={(e) => {
+                                console.log(newTech)
+                                //188 stands for comma keyCode
+                                if (e.key === ',' && newTech.length >= 1) {
+                                    addTech()
+                                    setNewTech('')
+                                }
+                            }}
+                            onChange={event => {
+                                const { value } = event.target
+                                const isValueComma = value === ','
+                                if (!isValueComma) {
+                                    setNewTech(event.target.value)
+                                }
+                            }}
                             inputProps={{
                                 maxLength: 10
                             }}
-                            onFocus={event => event.target.addEventListener('keydown', e => addTechWithCommaShortcut(e))}
-                            onBlur={event => event.target.removeEventListener('keydown', addTechWithCommaShortcut)}
                             InputLabelProps={{
                                 className: 'input-label'
                             }}
                             size="small"
-                            value={newTech}
-                            onChange={event => setNewTech(event.target.value)} />
+                            value={newTech} />
                         {(newTech.length >= 1) && (
                             <span className='textfield-shortcut-reference'>,</span>
                         )}

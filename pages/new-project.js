@@ -155,26 +155,7 @@ export default function NewProject() {
                                         }} />
                                     )}
                                 </FieldArray>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
-                                <h1>dawdaw</h1>
+                                <Field setFieldValue={setFieldValue} as={ProjectRepository} />
 
                                 <button type="submit">{isSubmitting ? 'Submitting...' : 'Submit'}</button>
 
