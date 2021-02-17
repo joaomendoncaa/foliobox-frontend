@@ -21,7 +21,7 @@ export default function PreviewProjectCard({ projectName, projectMonth, projectY
     useEffect(() => {
         const initialTop = content.current.getBoundingClientRect().top
         const handleScroll = () => {
-            setFixedPosition((window.scrollY + 235) > initialTop)
+            setFixedPosition((window.scrollY + 207) > initialTop)
         }
         window.addEventListener('scroll', handleScroll)
 

@@ -19,7 +19,7 @@ export const Container = styled.div`
 
     ${props => props.fixed && css`
         position: fixed;
-        top: 515px;
+        top: 207px;
     `}
 `
 

@@ -33,7 +33,12 @@ export default function ProjectDetails(props) {
                 rows={6}
                 label="Details"
                 placeholder='This project is about...'
-                inputProps={{ maxLength: 200, name: field.name, value: field.value }}
+                inputProps={{
+                    maxLength: 200,
+                    spellCheck: "false",
+                    name: field.name,
+                    value: field.value
+                }}
                 error={(meta.touched && meta.error) ? true : false}
                 helperText={(meta.touched && meta.error) ? meta.error : null}
                 onChange={event => {

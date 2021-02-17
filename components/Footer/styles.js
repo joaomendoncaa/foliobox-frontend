@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    width: calc(100%);
+    width: 100%;
     padding: .5rem var(--horizontal-padding);
 
     ${props => (props.isPositionAbsolute === true) ? 'position: absolute;bottom: 1rem;left: 0;z-index: 1;' : ''}

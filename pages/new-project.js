@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 import { FormEvent, useState, ChangeEvent } from 'react'
 import { Router, useRouter } from 'next/router'
 import Head from 'next/head'
-import { Form, Formik, Field } from 'formik'
+import { Form, Formik, Field, FieldArray } from 'formik'
 import * as Yup from 'yup'
 
 //Components imports
@@ -146,7 +146,35 @@ export default function NewProject() {
                                 <Field setFieldValue={setFieldValue} as={ProjectName} />
                                 <Field setFieldValue={setFieldValue} as={ProjectDate} />
                                 <Field setFieldValue={setFieldValue} as={ProjectDetails} />
-                                <ProjectTechnologies />
+                                <FieldArray name='techList'>
+                                    {({ push, remove }) => (
+                                        <ProjectTechnologies fieldArrayProps={{
+                                            push,
+                                            remove,
+                                            values
+                                        }} />
+                                    )}
+                                </FieldArray>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
+                                <h1>dawdaw</h1>
 
                                 <button type="submit">{isSubmitting ? 'Submitting...' : 'Submit'}</button>
 
