@@ -36,7 +36,7 @@ export default function NewProjectHeader() {
                     <Title>Live Preview</Title>
                 </LivePreviewWrapper>
                 <NewProjectWrapper>
-                    <Title>Project Specifications</Title>
+                    <Title>New Project Specifications</Title>
                 </NewProjectWrapper>
             </Content>
             {fixedPosition && <Placeholder height={headerContent.current.getBoundingClientRect().height} />}

@@ -27,7 +27,8 @@ import NewProjectFormContext from '../context/NewProjectFormContext'
 //Styles imports
 import {
     Container,
-    Main
+    Main,
+    SubmitCancelInput
 } from '../styles/NewProject'
 
 export default function NewProject() {
@@ -128,8 +129,10 @@ export default function NewProject() {
                                 .required('Project details are required'),
                             techList: Yup.array()
                                 .required('You must display the tech you used on the project'),
-                            repository: Yup.string().url(),
-                            demoLink: Yup.string(),
+                            repository: Yup.string()
+                                .url(),
+                            demoLink: Yup.string()
+                                .url('That\'s not a valid URL'),
                             images: Yup.array()
                                 .required('Missing some images for the project')
                         })}
@@ -155,9 +158,14 @@ export default function NewProject() {
                                         }} />
                                     )}
                                 </FieldArray>
+                                <Field setFieldValue={setFieldValue} as={ProjectMedia} />
                                 <Field setFieldValue={setFieldValue} as={ProjectRepository} />
+                                <Field setFieldValue={setFieldValue} as={ProjectDemoLink} />
 
-                                <button type="submit">{isSubmitting ? 'Submitting...' : 'Submit'}</button>
+                                <SubmitCancelInput>
+                                    <button type="submit" class='btn-cancel'>Cancel</button>
+                                    <button type="submit" class='btn-submit'>{isSubmitting ? 'Submitting...' : 'Submit'}</button>
+                                </SubmitCancelInput>
 
                                 <pre>{JSON.stringify(values, null, 4)}</pre>
                             </Form>

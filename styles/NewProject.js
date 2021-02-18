@@ -27,3 +27,9 @@ export const Main = styled.div`
     }
 `
 
+export const SubmitCancelInput = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
