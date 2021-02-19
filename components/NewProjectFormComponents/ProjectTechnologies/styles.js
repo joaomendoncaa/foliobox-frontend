@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 `
 
 export const Title = styled.h1`

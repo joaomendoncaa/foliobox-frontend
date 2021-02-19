@@ -16,7 +16,7 @@ import {
 
 // TODO: make the component show the characters written vs the max characters
 export default function ProjectDetails(props) {
-    const { updateData } = useContext(NewProjectFormContext)
+    const { updateFormPreviewData } = useContext(NewProjectFormContext)
     const [field, meta] = useField('details')
 
     const { error, helperText, form, setFieldValue, ...rest } = props
@@ -43,7 +43,7 @@ export default function ProjectDetails(props) {
                 helperText={(meta.touched && meta.error) ? meta.error : null}
                 onChange={event => {
                     setFieldValue(field.name, event.target.value)
-                    updateData(event)
+                    updateFormPreviewData('details', event.target.value)
                 }} />
         </Container>
     )

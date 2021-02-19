@@ -28,16 +28,22 @@ export default function ProjectTechnologies(props) {
     const classes = useStyles()
     const { push, remove } = props.fieldArrayProps
 
-    const { formData, updateData } = useContext(NewProjectFormContext)
-    const [techListField, meta] = useField('techList')
+    const { formData, updateFormPreviewData } = useContext(NewProjectFormContext)
+    const [techListField, techListMeta] = useField('techList')
     const [newTech, setNewTech] = useState('')
 
     const addTech = () => {
+        console.log('tech added')
         //filters techInput commas
         const techWithFilteredCommas = newTech.split(",").join("")
-        console.log('techWithFilteredCommas', techWithFilteredCommas)
         push(techWithFilteredCommas)
+        updateTechListPreview()
+        console.log('tech added to the preview data', formData.techList)
         setNewTech('')
+    }
+
+    const updateTechListPreview = () => {
+        updateFormPreviewData('techList', techListField.value)
     }
 
     return (
@@ -48,7 +54,10 @@ export default function ProjectTechnologies(props) {
                 {techListField.value.map((tech, index) => (
                     <TechItem key={index}>
                         <span>{tech.toLowerCase()}</span>
-                        <DeleteTechButton type="button" onClick={() => remove(index)}>
+                        <DeleteTechButton type="button" onClick={() => {
+                            remove(index)
+                            updateTechListPreview()
+                        }}>
                             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 1.57135L9.42865 0L5.5 3.92865L1.57135 0L0 1.57135L3.92865 5.5L0 9.42865L1.57135 11L5.5 7.07135L9.42865 11L11 9.42865L7.07135 5.5L11 1.57135Z" fill="black" />
                             </svg>
@@ -66,7 +75,6 @@ export default function ProjectTechnologies(props) {
                             type='text'
                             className={classes.input}
                             onKeyPress={(e) => {
-                                console.log(newTech)
                                 //188 stands for comma keyCode
                                 if (e.key === ',' && newTech.length >= 1) {
                                     addTech()
@@ -97,7 +105,9 @@ export default function ProjectTechnologies(props) {
                             type="submit"
                             variant="contained"
                             className='button-add-tech'
-                            onClick={() => addTech()}>
+                            onClick={() => {
+                                addTech()
+                            }}>
                             ADD TECHNOLOGY
                         </Button>
                     )}

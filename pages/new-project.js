@@ -46,26 +46,24 @@ export default function NewProject() {
         previewImages: []
     })
 
-    const updateData = (event) => {
-        const { name, value } = event.target
-
-        switch (name) {
+    const updateFormPreviewData = (dataName, dataValue) => {
+        switch (dataName) {
             case 'name':
                 setFormData(prevData => ({
                     ...prevData,
-                    [name]: value.toUpperCase().trim()
+                    [dataName]: dataValue.toUpperCase().trim()
                 }))
                 break
             case 'details':
                 setFormData(prevData => ({
                     ...prevData,
-                    [name]: value
+                    [dataName]: dataValue
                 }))
                 break
             default:
                 setFormData(prevData => ({
                     ...prevData,
-                    [name]: value
+                    [dataName]: dataValue
                 }))
                 break
         }
@@ -90,7 +88,7 @@ export default function NewProject() {
             <TopHeader />
             {isMobile ? <MobileNewProjectHeader /> : <NewProjectHeader />}
             <Main>
-                <NewProjectFormContext.Provider value={{ formData, updateData }}>
+                <NewProjectFormContext.Provider value={{ formData, updateFormPreviewData }}>
                     <PreviewProjectCard
                         projectName={formData.name}
                         projectMonth={formData.month}
@@ -110,8 +108,7 @@ export default function NewProject() {
                             techList: [],
                             repository: '',
                             demoLink: '',
-                            images: [],
-                            previewImages: []
+                            images: []
                         }}
 
                         validationSchema={Yup.object({
@@ -168,6 +165,7 @@ export default function NewProject() {
                                 </SubmitCancelInput>
 
                                 <pre>{JSON.stringify(values, null, 4)}</pre>
+                                <pre>{JSON.stringify(formData, null, 4)}</pre>
                             </Form>
                         )}
                     </Formik>

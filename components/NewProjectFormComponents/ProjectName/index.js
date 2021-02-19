@@ -14,7 +14,7 @@ import {
 } from './styles'
 
 export default function ProjectName(props) {
-    const { updateData } = useContext(NewProjectFormContext)
+    const { updateFormPreviewData } = useContext(NewProjectFormContext)
     const [field, meta] = useField('name')
 
     const { error, helperText, form, setFieldValue, ...rest } = props
@@ -35,7 +35,7 @@ export default function ProjectName(props) {
                 helperText={(meta.touched && meta.error) ? meta.error : null}
                 onChange={event => {
                     setFieldValue(field.name, event.target.value.toUpperCase())
-                    updateData(event)
+                    updateFormPreviewData('name', event.target.value)
                 }} />
         </Container>
     )

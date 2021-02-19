@@ -10,26 +10,57 @@ import NewProjectFormContext from '../../../context/NewProjectFormContext'
 import {
     Container,
     Title,
-    Description
+    Description,
+    ImageInputWrapper
 } from './styles'
 
 export default function ProjectMedia(props) {
-    const { updateData } = useContext(NewProjectFormContext)
-    const [field, meta] = useField('images')
+    const { formData, setPreviewImages } = useContext(NewProjectFormContext)
+    const [imagesField, imagesMeta] = useField('images')
 
     const { error, helperText, form, setFieldValue, ...rest } = props
+
+    const handleSelectImages = (event) => {
+        if (!event.target.files) {
+            return
+        }
+
+        const selectedImages = Array.from(event.target.files)
+
+        setFieldValue(imagesField.name, selectedImages)
+
+        const selectedImagesPreview = selectedImages.map(image => {
+            return URL.createObjectURL(image)
+        })
+
+        setPreviewImages()
+    }
 
     return (
         <Container>
             <Title>Project Media</Title>
             <Description>Add some media to represent your project, you can either screenshot some screens or make your own media</Description>
-            <input
-                accept="image/*"
-                className='file-input'
-                id="contained-button-file"
-                multiple
-                type="file"
-            />
+            <ImageInputWrapper>
+                <div className="images-container">
+                    {formData.previewImages.map(image => {
+                        return (
+                            <img key={image} src={image} alt={name} />
+                        )
+                    })}
+                    <label htmlFor="image[]" className="new-image-label">
+                        {(formData.previewImages.length > 1) ? 're-upload images' : 'upload images'}
+                    </label>
+                </div>
+
+                <input
+                    accept="image/*"
+                    className='file-input'
+                    id="image[]"
+                    multiple
+                    onChange={handleSelectImages}
+                    type="file"
+                />
+            </ImageInputWrapper>
         </Container>
     )
 }

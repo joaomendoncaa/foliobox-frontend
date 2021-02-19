@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ProjectDate(props) {
     const classes = useStyles()
 
-    const { updateData } = useContext(NewProjectFormContext)
+    const { updateFormPreviewData } = useContext(NewProjectFormContext)
     const [monthField, monthMeta] = useField('month')
     const [yearField, yearMeta] = useField('year')
 
@@ -51,8 +51,8 @@ export default function ProjectDate(props) {
                         error={(monthMeta.touched && monthMeta.error) ? true : false}
                         helperText={(monthMeta.touched && monthMeta.error) ? monthMeta.error : null}
                         onChange={event => {
-                            setFieldValue(monthField.name, event.target.value.toUpperCase())
-                            updateData(event)
+                            setFieldValue(monthField.name, event.target.value)
+                            updateFormPreviewData('month', event.target.value)
                         }}>
                         <MenuItem value=''>
                             <em>None</em>
@@ -88,7 +88,7 @@ export default function ProjectDate(props) {
                         helperText={(yearMeta.touched && yearMeta.error) ? yearMeta.error : null}
                         onChange={event => {
                             setFieldValue(yearField.name, event.target.value.toUpperCase())
-                            updateData(event)
+                            updateFormPreviewData('year', event.target.value)
                         }}>
                         <MenuItem value=''>
                             <em>None</em>
