@@ -83,7 +83,7 @@ export default function ProjectTechnologies(props) {
                             }}
                             onChange={event => {
                                 const { value } = event.target
-                                const isValueComma = value === ','
+                                const isValueComma = value === 'enter'
                                 if (!isValueComma) {
                                     setNewTech(event.target.value)
                                 }
