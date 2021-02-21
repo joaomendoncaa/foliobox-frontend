@@ -44,7 +44,10 @@ export default function ProjectMedia(props) {
                 <div className="images-container">
                     {formData.previewImages.map(image => {
                         return (
-                            <img key={image} src={image} alt={name} />
+                            <div>
+                                <img key={image} src={image} alt={name} />
+                                <button>delete</button>
+                            </div>
                         )
                     })}
                     <label htmlFor="image[]" className="new-image-label">
