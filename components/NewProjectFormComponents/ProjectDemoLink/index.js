@@ -14,7 +14,7 @@ import {
 } from './styles'
 
 export default function ProjectDemoLink(props) {
-    const { updateData } = useContext(NewProjectFormContext)
+    const { updateFormPreviewData } = useContext(NewProjectFormContext)
     const [field, meta] = useField('demoLink')
 
     const { error, helperText, form, setFieldValue, ...rest } = props
@@ -35,7 +35,7 @@ export default function ProjectDemoLink(props) {
                 helperText={(meta.touched && meta.error) ? meta.error : null}
                 onChange={event => {
                     setFieldValue(field.name, event.target.value.trim())
-                    updateData(event)
+                    updateFormPreviewData('demoLink', event.target.value)
                 }} />
         </Container>
     )

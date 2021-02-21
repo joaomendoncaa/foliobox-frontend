@@ -15,7 +15,7 @@ import {
 } from './styles'
 
 export default function ProjectMedia(props) {
-    const { formData, setPreviewImages } = useContext(NewProjectFormContext)
+    const { formData, updateFormPreviewData } = useContext(NewProjectFormContext)
     const [imagesField, imagesMeta] = useField('images')
 
     const { error, helperText, form, setFieldValue, ...rest } = props
@@ -33,7 +33,7 @@ export default function ProjectMedia(props) {
             return URL.createObjectURL(image)
         })
 
-        setPreviewImages()
+        updateFormPreviewData('previewImages', selectedImagesPreview)
     }
 
     return (

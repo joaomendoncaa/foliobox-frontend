@@ -14,7 +14,7 @@ import {
 } from './styles'
 
 export default function ProjectRepository(props) {
-    const { updateData } = useContext(NewProjectFormContext)
+    const { updateFormPreviewData } = useContext(NewProjectFormContext)
     const [field, meta] = useField('repository')
 
     const { error, helperText, form, setFieldValue, ...rest } = props
